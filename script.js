@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const tareaEnviar = document.querySelector(".tarea-enviar");
     const contenedorTareas = document.querySelector(".contenedor-tareas");
     const tareasForm = document.querySelector(".tareas-form");
+    const abrirContenedorTareas = document.getElementById("abrir-contenedor");
 
     // Función para mostrar tareas
     function mostrarTareas() {
@@ -57,4 +58,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Cargar tareas guardadas al inicio
     mostrarTareas();
-});
+
+    // Mostrar u ocultar el contenedor basado en el estado inicial del checkbox
+    if (abrirContenedorTareas.checked) {
+        contenedorTareas.style.display = "flex";
+    } else {
+        contenedorTareas.style.display = "none";
+    }
+
+    // Agregar evento para detectar cambios en el checkbox
+    abrirContenedorTareas.addEventListener("change", () => {
+        if (abrirContenedorTareas.checked) {
+            contenedorTareas.style.display = "flex";
+        } else {
+            contenedorTareas.style.display = "none";
+        }});
+})
