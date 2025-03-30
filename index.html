@@ -9,15 +9,26 @@
 <body>
     <div class="container">
         <h1 class="titulo">To-Do List</h1>
+
         <form class="tareas-form">
             <input type="text" class="tarea-nombre" placeholder="Nombre de la Tarea">
             <input type="submit" value="Agregar tarea +" class="tarea-enviar">
         </form>
+
         <label class="abrir-contenedor-label">
             <input type="checkbox" id="abrir-contenedor">
             Tareas a completar 
         </label>
+
         <div class="contenedor-tareas"></div>
+
+        <label class="abrir-contenedor-tareas-completadas-label">
+            <input type="checkbox" id="abrir-contenedor-tareas-completadas">
+            Tareas completadas 
+        </label>
+
+        <div class="contenedor-tareas-completadas"></div>
+        
     </div>
     <script src="script.js"></script>
 </body>

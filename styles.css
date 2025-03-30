@@ -74,7 +74,8 @@ html, body {
     outline: 2px solid var(--btnr);
 }
 
-.contenedor-tareas {
+.contenedor-tareas,
+.contenedor-tareas-completadas {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
@@ -92,22 +93,30 @@ html, body {
 .tarea-div {
     height: fit-content;
     position: relative;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-remove {
     border: none;
-    border-radius: 2px;
+    border-radius: 5px;
     position: absolute;
+    padding: 5px 8px;
     right: 10px;
     background-color: var(--btnr);
     color: var(--bgc);
 }
 
-#abrir-contenedor {
+#abrir-contenedor,
+#abrir-contenedor-tareas-completadas {
     display:none;
 }
 
-.abrir-contenedor-label {
+.abrir-contenedor-label,
+.abrir-contenedor-tareas-completadas-label {
     width: 100%;
     text-align: center;
     background-color: var(--btnr);
@@ -119,6 +128,25 @@ html, body {
     user-select: none;
 }
 
-#abrir-contenedor:checked ~ .contenedor-tareas {
-    display: flex;
+.tarea-checkbox {
+    appearance: none;
+    position: absolute;
+    left: 10px;
+    box-sizing: border-box;
+    outline: 2px solid var(--btnr);
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    transition: .6s all;
+}
+
+.tarea-checkbox:hover {
+    background-color: var(--btnr);
+}
+
+.tarea-checkbox:hover::before {
+    content: "✔";
+    position: absolute;
+    right: 2px;
+    top: 2px;
 }
