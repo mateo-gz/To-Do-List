@@ -24,7 +24,7 @@ html, body {
     flex-direction: column;
     align-items: center;
     transition: .8s all;
-    gap: 10px;
+    gap: 20px;
     width: 70%;
     height: 90%;
     box-sizing: border-box;
@@ -37,13 +37,14 @@ html, body {
 .titulo {
     color: var(--texto);
     margin: 0;
+    font-size: 2.5rem;
 }
 
 .tareas-form {
     width: 100%;
     display: grid;
     grid-template-columns: 2;
-    gap: 10px;
+    gap: 15px;
     box-sizing: border-box;
 }
 
@@ -58,6 +59,7 @@ html, body {
     background-color: var(--inp);
     text-align: center;
     box-sizing: border-box;
+    font-size: 1.3rem;
 }
 
 .tarea-nombre::placeholder {
@@ -97,13 +99,15 @@ html, body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    text-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .btn-remove {
     border: none;
     border-radius: 5px;
-    position: absolute;
     padding: 5px 8px;
     right: 10px;
     background-color: var(--btnr);
@@ -126,11 +130,11 @@ html, body {
     color: var(--texto);
     font-weight: bolder;
     user-select: none;
+    font-size: 1.3rem;
 }
 
 .tarea-checkbox {
     appearance: none;
-    position: absolute;
     left: 10px;
     box-sizing: border-box;
     outline: 2px solid var(--btnr);
@@ -138,6 +142,7 @@ html, body {
     height: 16px;
     border-radius: 2px;
     transition: .6s all;
+    box-sizing: border-box;
 }
 
 .tarea-checkbox:hover {
@@ -149,4 +154,10 @@ html, body {
     position: absolute;
     right: 2px;
     top: 2px;
+}
+
+@media screen and (min-width:600px) {
+    .container {
+        width: 50%;
+    }
 }

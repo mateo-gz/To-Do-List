@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const abrirContenedorTareasCompletadas = document.getElementById("abrir-contenedor-tareas-completadas");
 
     // Mostrar tareas pendientes
-    function mostrarTareas() {
+    const mostrarTareas = ()=> {
         contenedorTareas.innerHTML = ""; 
 
         let tareas = JSON.parse(localStorage.getItem("tareas")) || [];
@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
             let tareaDiv = document.createElement("div");
             tareaDiv.classList.add("tarea-div");
             tareaDiv.innerHTML = `
+                <input type="checkbox" class="tarea-checkbox" data-id="${tarea.id}">
                 ${tarea.nombre} 
                 <button class="btn-remove" onclick="eliminarTarea(${tarea.id})">X</button> 
-                <input type="checkbox" class="tarea-checkbox" data-id="${tarea.id}">
             `;
             contenedorTareas.appendChild(tareaDiv);
         });
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Mostrar tareas completadas
-    function mostrarTareasCompletadas() {
+    const mostrarTareasCompletadas = ()=> {
         contenedorTareasCompletadas.innerHTML = "";
 
         let tareasCompletadas = JSON.parse(localStorage.getItem("tareasCompletadas")) || [];
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Mover tarea a completadas
-    function moverATareasCompletadas(id) {
+    const moverATareasCompletadas = (id)=> {
         let tareas = JSON.parse(localStorage.getItem("tareas")) || [];
         let tareasCompletadas = JSON.parse(localStorage.getItem("tareasCompletadas")) || [];
 
