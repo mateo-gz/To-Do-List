@@ -16,6 +16,11 @@ html, body {
     font-family: sans-serif;
 }
 
+div {
+    width: 35%;
+    word-break: break-all;
+}
+
 .container {
     background-color: var(--bgc);
     padding: 20px;
@@ -24,9 +29,8 @@ html, body {
     flex-direction: column;
     align-items: center;
     transition: .8s all;
-    gap: 20px;
     width: 70%;
-    height: 90%;
+    height: fit-content;
     box-sizing: border-box;
 }
 
@@ -46,11 +50,14 @@ html, body {
     grid-template-columns: 2;
     gap: 15px;
     box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .tarea-nombre,
 .tarea-enviar,
-.tarea-div {
+.tarea-div,
+.fecha,
+.hora {
     width: 100%;
     padding: 10px;
     border-radius: 12px;
@@ -60,6 +67,12 @@ html, body {
     text-align: center;
     box-sizing: border-box;
     font-size: 1.3rem;
+}
+
+.tarea-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .tarea-nombre::placeholder {
@@ -79,17 +92,18 @@ html, body {
 .contenedor-tareas,
 .contenedor-tareas-completadas {
     width: 100%;
-    padding: 10px;
+    padding: 0px;
     box-sizing: border-box;
     background-color: var(--btnr);
     border-radius: 12px;
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: start;
     gap: 10px;
-    height: 100%;
     overflow: auto;
+    transition: .8s all;
+    height: 0;
 }
 
 .tarea-div {
@@ -115,12 +129,14 @@ html, body {
 }
 
 #abrir-contenedor,
-#abrir-contenedor-tareas-completadas {
+#abrir-contenedor-tareas-completadas,
+.abrir-ventana-modal-input {
     display:none;
 }
 
 .abrir-contenedor-label,
-.abrir-contenedor-tareas-completadas-label {
+.abrir-contenedor-tareas-completadas-label,
+.abrir-ventana-modal {
     width: 100%;
     text-align: center;
     background-color: var(--btnr);
@@ -131,6 +147,11 @@ html, body {
     font-weight: bolder;
     user-select: none;
     font-size: 1.3rem;
+    margin: 10px;
+}
+
+.abrir-ventana-modal {
+    background-color: var(--btna);
 }
 
 .tarea-checkbox {
@@ -155,6 +176,52 @@ html, body {
     right: 2px;
     top: 2px;
 }
+
+.ventana-modal {
+    width: 80%;
+    box-sizing: border-box;
+    background-color: var(--bgc);
+    padding: 20px;
+    border-radius: 12px;
+    position: absolute;
+    top: center;
+    z-index: 10;
+    display: none;
+}
+
+.cerrar-ventana-modal {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    background-color: var(--texto);
+    color: var(--bgc);
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+.fondo-ventana-modal {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #fff5;
+    display: none;
+    z-index: 5;
+}
+
+::-webkit-scrollbar {
+    background-color: var(--texto);
+    width: 5px;
+    border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--btna);
+    border-radius: 12px;
+}
+
+/*Media queries section 600px*/
 
 @media screen and (min-width:600px) {
     .container {

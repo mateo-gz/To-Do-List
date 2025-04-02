@@ -5,15 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-do List Mateo</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 </head>
 <body>
+    <div class="fondo-ventana-modal"></div>
+    <div class="ventana-modal">
+        <form class="tareas-form">
+            <input type="text" class="tarea-nombre" placeholder="Nombre de la Tarea">
+            <input type="time" class="hora">
+            <input type="submit" value="Agregar tarea +" class="tarea-enviar">
+        </form>
+        <button class="cerrar-ventana-modal">X</button>
+    </div>
     <div class="container">
         <h1 class="titulo">To-Do List</h1>
 
-        <form class="tareas-form">
-            <input type="text" class="tarea-nombre" placeholder="Nombre de la Tarea">
-            <input type="submit" value="Agregar tarea +" class="tarea-enviar">
-        </form>
+        <label class="abrir-ventana-modal">
+            <input type="checkbox" class="abrir-ventana-modal-input">
+            Agregar Tarea +
+        </label>
 
         <label class="abrir-contenedor-label">
             <input type="checkbox" id="abrir-contenedor">
